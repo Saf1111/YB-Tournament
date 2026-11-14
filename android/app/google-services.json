@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1065906958644",
+    "project_id": "yb-tournament-app",
+    "storage_bucket": "yb-tournament-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065906958644:android:046542633578db3e533561",
+        "android_client_info": {
+          "package_name": "com.yb.tournamentapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAus4-lsVu1LFYlHhi6Na1vPWDJu8ForAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065906958644:android:b6af9440fd7a1f54533561",
+        "android_client_info": {
+          "package_name": "com.yb.tournamentmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAus4-lsVu1LFYlHhi6Na1vPWDJu8ForAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
