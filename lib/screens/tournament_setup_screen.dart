@@ -82,8 +82,9 @@ class _TournamentSetupScreenState extends State<TournamentSetupScreen> {
   }
 
   void _addSingleTeam() {
-    if (_teams.length >= 24)
+    if (_teams.length >= 24) {
       return; // അല്ലെങ്കിൽ കൂടുതൽ ടീമുകൾ വേണമെങ്കിൽ ഇവിടെ മാറ്റാം
+    }
     _syncTeamsList(_teams.length + 1);
   }
 
@@ -545,8 +546,9 @@ class _TournamentSetupScreenState extends State<TournamentSetupScreen> {
                               ),
                             ],
                             onChanged: (val) {
-                              if (val != null)
+                              if (val != null) {
                                 setState(() => _playoffQualifiers = val);
+                              }
                             },
                           ),
                         ),
@@ -578,8 +580,9 @@ class _TournamentSetupScreenState extends State<TournamentSetupScreen> {
                               ),
                             ],
                             onChanged: (val) {
-                              if (val != null)
+                              if (val != null) {
                                 setState(() => _qualifiersPerGroup = val);
+                              }
                             },
                           ),
                         ),
@@ -607,7 +610,7 @@ class _TournamentSetupScreenState extends State<TournamentSetupScreen> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: _teams.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemBuilder: (context, index) {
                   final team = _teams[index];
                   return Container(
@@ -764,7 +767,7 @@ class _TournamentSetupScreenState extends State<TournamentSetupScreen> {
                   color: Color(0xFF0F172A),
                 ),
               ),
-              if (trailing != null) trailing,
+              ?trailing,
             ],
           ),
           const SizedBox(height: 12),

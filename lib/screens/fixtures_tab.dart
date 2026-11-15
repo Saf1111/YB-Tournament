@@ -305,7 +305,7 @@ class _FixturesTabState extends State<FixturesTab> {
           child: ListView.separated(
             padding: const EdgeInsets.all(16),
             itemCount: matchesForRound.length + (showPlayoffButton ? 1 : 0),
-            separatorBuilder: (_, __) => const SizedBox(height: 12),
+            separatorBuilder: (_, _) => const SizedBox(height: 12),
             itemBuilder: (context, index) {
               if (index == matchesForRound.length) {
                 return Padding(
@@ -604,20 +604,22 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
     }
 
     _cleanSheets.clear();
-    if (as_ == 0)
+    if (as_ == 0) {
       _cleanSheets.add(
         MatchCleanSheet(
           teamId: widget.homeTeam.id,
           goalkeeperName: 'GK (${widget.homeTeam.name})',
         ),
       );
-    if (hs == 0)
+    }
+    if (hs == 0) {
       _cleanSheets.add(
         MatchCleanSheet(
           teamId: widget.awayTeam.id,
           goalkeeperName: 'GK (${widget.awayTeam.name})',
         ),
       );
+    }
 
     setState(() {
       widget.match.homeScore = hs;

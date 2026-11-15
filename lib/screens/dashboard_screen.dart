@@ -311,7 +311,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, -4),
             ),
@@ -434,7 +434,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: const Color(0xFFE2E8F0)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10),
         ],
       ),
       child: Column(
@@ -468,7 +468,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Switch(
                       value: _isFullView,
                       onChanged: (val) => setState(() => _isFullView = val),
-                      activeColor: theme.primaryColor,
+                      activeThumbColor: theme.primaryColor,
                     ),
                   ),
               ],
@@ -527,7 +527,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       return Container(
                         height: 44,
                         color: isTopN
-                            ? theme.primaryColor.withOpacity(0.08)
+                            ? theme.primaryColor.withValues(alpha: 0.08)
                             : Colors.transparent,
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Row(
@@ -633,7 +633,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         return Container(
                           height: 44,
                           color: isTopN
-                              ? theme.primaryColor.withOpacity(0.08)
+                              ? theme.primaryColor.withValues(alpha: 0.08)
                               : Colors.transparent,
                           padding: const EdgeInsets.only(right: 12),
                           child: Row(
@@ -765,8 +765,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
           String title = currentMatchesCount == 1
               ? 'FINAL'
               : (currentMatchesCount == 2 ? 'SEMI FINAL' : 'QUARTER FINAL');
-          if (currentMatchesCount > 4)
+          if (currentMatchesCount > 4) {
             title = 'ROUND OF ${currentMatchesCount * 2}';
+          }
 
           for (int i = 0; i < currentMatchesCount; i++) {
             dummyMatches.add(
@@ -809,7 +810,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: CustomPaint(
           painter: BracketPainter(
             matchesPerRound: matchesPerRound,
-            lineColor: theme.primaryColor.withOpacity(0.3),
+            lineColor: theme.primaryColor.withValues(alpha: 0.3),
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -827,7 +828,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       height: 34,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: theme.primaryColor.withOpacity(0.1),
+                        color: theme.primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Text(
@@ -884,7 +885,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         border: Border.all(color: const Color(0xFFE2E8F0), width: 2),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 6,
             offset: const Offset(0, 3),
           ),
@@ -968,7 +969,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
                 color: isCompleted
-                    ? Colors.white.withOpacity(0.5)
+                    ? Colors.white.withValues(alpha: 0.5)
                     : const Color(0xFFF1F5F9),
                 borderRadius: BorderRadius.circular(6),
               ),
@@ -1054,7 +1055,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           border: Border.all(color: const Color(0xFFE2E8F0)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.03),
+              color: Colors.black.withValues(alpha: 0.03),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -1065,7 +1066,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: headerColor.withOpacity(0.4),
+                color: headerColor.withValues(alpha: 0.4),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: textColor, size: 28),

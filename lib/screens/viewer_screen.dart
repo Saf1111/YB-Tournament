@@ -92,7 +92,7 @@ class _ViewerScreenState extends State<ViewerScreen> {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, -4),
             ),
@@ -158,7 +158,7 @@ class _ViewerScreenState extends State<ViewerScreen> {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: const Color(0xFFE2E8F0)),
         boxShadow: [
-          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10),
+          BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 10),
         ],
       ),
       child: Column(
@@ -191,7 +191,7 @@ class _ViewerScreenState extends State<ViewerScreen> {
                   child: Switch(
                     value: _isFullView,
                     onChanged: (val) => setState(() => _isFullView = val),
-                    activeColor: theme.primaryColor,
+                    activeThumbColor: theme.primaryColor,
                   ),
                 ),
               ],
@@ -445,7 +445,7 @@ class _ViewerScreenState extends State<ViewerScreen> {
           border: Border.all(color: const Color(0xFFE2E8F0)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.03),
+              color: Colors.black.withValues(alpha: 0.03),
               blurRadius: 8,
               offset: const Offset(0, 4),
             ),
@@ -456,7 +456,7 @@ class _ViewerScreenState extends State<ViewerScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: headerColor.withOpacity(0.4),
+                color: headerColor.withValues(alpha: 0.4),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, color: textColor, size: 28),
@@ -715,7 +715,7 @@ class ViewerAwardDetailsScreen extends StatelessWidget {
                       border: Border.all(color: headerColor),
                       boxShadow: [
                         BoxShadow(
-                          color: headerColor.withOpacity(0.2),
+                          color: headerColor.withValues(alpha: 0.2),
                           blurRadius: 12,
                           offset: const Offset(0, 6),
                         ),
@@ -752,7 +752,7 @@ class ViewerAwardDetailsScreen extends StatelessWidget {
                             vertical: 8,
                           ),
                           decoration: BoxDecoration(
-                            color: headerColor.withOpacity(0.3),
+                            color: headerColor.withValues(alpha: 0.3),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
@@ -820,7 +820,7 @@ class ViewerAwardDetailsScreen extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: headerColor.withOpacity(0.2),
+                          color: headerColor.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
