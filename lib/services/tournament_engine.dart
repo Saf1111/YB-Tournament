@@ -7,8 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:image_cropper/image_cropper.dart';
 import '../models/tournament_models.dart';
 
-// ശ്രദ്ധിക്കുക: ഇവിടെ dashboard_screen.dart ഇംപോർട്ട് ചെയ്തിട്ടില്ല. അതുകൊണ്ടാണ് എറർ വന്നത്.
-
 class TournamentEngine {
   static const String _storageKey = 'yb_efootball_tournaments_v1';
 
@@ -413,7 +411,7 @@ class TournamentEngine {
         for (var goal in match.scorers) {
           String key = '${goal.teamId}_${goal.playerName.toLowerCase().trim()}';
           if (scorers.containsKey(key)) {
-            scorers[key]!.count++;
+            scorers[key]!.count += goal.goals;
           } else {
             final team = tournament.teams.firstWhere(
               (t) => t.id == goal.teamId,
@@ -424,7 +422,7 @@ class TournamentEngine {
               teamId: team.id,
               teamName: team.name,
               teamLogo: team.logoPath,
-              count: 1,
+              count: goal.goals,
             );
           }
         }
